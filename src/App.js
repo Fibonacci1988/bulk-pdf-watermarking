@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'antd/dist/antd.css';
+import './holy-grail.css'
 import './App.css';
 import styled from "styled-components";
 import background from './background.jpg';
@@ -34,6 +35,8 @@ const props = {
 const MainContainer = styled.div`
 width: 1440px;
 height: 1024px;
+display: flex;
+flex-direction: column;
 `;
 
 const MainHeader=styled.header`
@@ -142,47 +145,41 @@ function App() {
   return (
     <MainContainer>
       
-    <MainHeader>
+  <div class="HolyGrail">
+  <header>
+  <MainHeader>
     <MainTitle>Watermark PDF files online</MainTitle>
     </MainHeader>
-
-
-    <div class="holy-grail-body">
-
-			<section class="holy-grail-content">
-      
-      <Dragger {...props}>
+  </header>
+  <div class="HolyGrail-body">
+    <main class="HolyGrail-content">
+    
+    <Dragger {...props}>
     <p className="ant-upload-drag-icon">
       <InboxOutlined />
     </p>
     <p className="ant-upload-text">Click or drag file to this area to upload</p>
   </Dragger>
 
-			</section>
+    </main>
+    <nav class="HolyGrail-nav">
 
-			<div class="holy-grail-sidebar-1 hg-sidebar">
-      
-      <form action="/changeWatermarkText" method="post">
+    <form action="/changeWatermarkText" method="post">
       <AddRemoveButton>Change Watermark Text</AddRemoveButton>
     </form>
 
+    </nav>
+    <aside class="HolyGrail-ads">
 
-			</div>
-
-			<div class="holy-grail-sidebar-2 hg-sidebar">
-      <form action="/api" method="post">
+    <form action="/api" method="post">
       <AddRemoveButton>Add Watermark</AddRemoveButton>
     </form>
 
-			</div>
+    </aside>
+  </div>
+  <footer>…</footer>
 
-		</div>
-
-
-
-   
-    
-    
+  </div>
     </MainContainer>
   );
 }

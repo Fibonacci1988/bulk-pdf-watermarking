@@ -11,7 +11,7 @@ from flask import render_template, request
 from werkzeug import secure_filename
 
 
-app =Flask(__name__,static_folder'./build',static_url_path='/')
+app =Flask(__name__)
 
 
 @app.route('/')
