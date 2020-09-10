@@ -33,8 +33,7 @@ const props = {
 };
 
 const MainContainer = styled.div`
-width: 1440px;
-height: 1024px;
+height: 100%;
 display: flex;
 flex-direction: column;
 `;
